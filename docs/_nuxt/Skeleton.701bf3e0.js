@@ -1,0 +1,1 @@
+import{_ as n,E as a,K as t,L as u,D as p,q as i,o as r,c,P as l}from"./entry.dacc0237.js";const d=a({props:{ui:{type:Object,default:()=>t.ui.skeleton}},setup(e){const s=u();return{ui:p(()=>i({},e.ui,s.ui.skeleton))}}});function f(e,s,o,m,k,_){return r(),c("div",{class:l([e.ui.base,e.ui.background,e.ui.rounded])},null,2)}const g=n(d,[["render",f]]);export{g as default};
