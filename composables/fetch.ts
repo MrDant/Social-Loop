@@ -17,6 +17,7 @@ export function myFetch<T>(url: string, options: UseFetchOptions<T> = {}) {
   const defaults: UseFetchOptions<T> = {
     key: url,
     baseURL: config.baseUrl,
+    headers: { Authorization: `Bearer ${getToken().value}` },
 
     onResponseError,
   };
