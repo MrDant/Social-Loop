@@ -9,8 +9,8 @@ export const profilSchema = z.object({
       label: z.string(),
       postcode: z.string().optional(),
       street: z.string().optional(),
-      x: z.number(),
-      y: z.number(),
+      lat: z.number(),
+      long: z.number(),
     }),
   }),
 });
