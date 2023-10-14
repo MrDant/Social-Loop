@@ -10,7 +10,9 @@ export async function useAuth(event: H3Event<EventHandlerRequest>) {
     event.context.user = await jwtUser(token);
     event.context.token = token;
   } catch (err) {
-    console.log(err);
-    throw new Error("Not authorized");
+    throw createError({
+      statusCode: 403,
+      message: "Not authorized",
+    });
   }
 }

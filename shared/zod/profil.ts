@@ -14,3 +14,21 @@ export const profilSchema = z.object({
     }),
   }),
 });
+
+export const putSchema = z.object({
+  firstName: z.string().min(2).optional(),
+  lastName: z.string().min(2).optional(),
+  attributes: z
+    .object({
+      phone: z.string().optional(),
+      address: z.object({
+        city: z.string(),
+        label: z.string(),
+        postcode: z.string().optional(),
+        street: z.string().optional(),
+        lat: z.number(),
+        long: z.number(),
+      }),
+    })
+    .optional(),
+});

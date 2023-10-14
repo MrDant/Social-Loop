@@ -1,4 +1,4 @@
-import profil from "../models/profil";
+import profil from "../../models/profil";
 import { z, useValidatedQuery, zh } from "h3-zod";
 
 export default defineEventHandler(async (event) => {
@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   const body = await useValidatedQuery(event, {
     lat: zh.numAsString.optional(),
     long: zh.numAsString.optional(),
-    zoom: zh.numAsString.optional().default("100"),
+    zoom: zh.numAsString.optional().default("0.04"),
   });
 
   const filter: any = {};

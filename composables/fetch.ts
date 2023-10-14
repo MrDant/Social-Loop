@@ -4,6 +4,9 @@ import { useAppConfig } from "#imports";
 
 const onResponseError = ({ request, response, error, options }: any) => {
   const toast = useToast();
+  if (response._data.statusCode === 403) {
+    navigateTo("/auth/login");
+  }
   response._data.message.split(";").forEach((msg: string) => {
     toast.add({
       title: "Erreur",

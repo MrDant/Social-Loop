@@ -1,6 +1,6 @@
-import Profil from "../models/profil";
+import Profil from "../../models/profil";
 import { useValidatedBody } from "h3-zod";
-import { profilSchema } from "../../shared/zod/profil";
+import { profilSchema } from "../../../shared/zod/profil";
 
 export default defineEventHandler(async (event) => {
   await useAuth(event);

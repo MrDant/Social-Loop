@@ -41,17 +41,14 @@ import dico from "../../shared/dico/profil";
 import { defu } from "defu";
 const props = defineProps({ profil: {}, clearOnSubmit: true });
 const profil = reactive(
-  defu(
-    {
-      firstName: "",
-      lastName: "",
-      attributes: {
-        phone: "",
-        address: null,
-      },
+  defu(props.profil, {
+    firstName: "",
+    lastName: "",
+    attributes: {
+      phone: "",
+      address: null,
     },
-    props.profil
-  )
+  })
 );
 const emit = defineEmits(["submit"]);
 
