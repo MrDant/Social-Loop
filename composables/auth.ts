@@ -9,7 +9,10 @@ export function hasRole(role: String): boolean {
   if (!getTokenData()) {
     return false;
   }
-  return getTokenData()?.data.roles.includes(role);
+  return (
+    getTokenData()?.data.roles.includes(role) ||
+    getTokenData()?.data.roles.includes("super")
+  );
 }
 
 export function getToken() {

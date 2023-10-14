@@ -31,7 +31,9 @@
           </template>
         </div>
       </div>
-      <UButton class="mt-4" @click="edit = true">Modifier le profil</UButton>
+      <UButton class="mt-4" @click="edit = true" v-if="hasEdit"
+        >Modifier le profil</UButton
+      >
     </template>
   </div>
 </template>
@@ -40,6 +42,7 @@ import dico from "/shared/dico/profil";
 definePageMeta({
   middleware: ["auth"],
 });
+const hasEdit = hasRole("put_profil");
 const edit = ref(false);
 const { id } = useRoute().params;
 

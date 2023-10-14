@@ -27,7 +27,7 @@ definePageMeta({
   layout: "",
 });
 const mapRef = useMapboxRef("mapId");
-const addProfil = hasRole("profil_add");
+const addProfil = hasRole("post_profil");
 const route = useRoute();
 const profils = ref([]);
 

@@ -3,7 +3,7 @@ import Profil from "../../models/profil";
 import { putSchema } from "../../../shared/zod/profil";
 
 export default defineEventHandler(async (event) => {
-  await useAuth(event);
+  await useAuth(event, "put_profil");
   const { id } = await useValidatedParams(event, {
     id: z.string(),
   });
