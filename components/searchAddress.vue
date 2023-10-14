@@ -3,13 +3,16 @@
     :model-value="modelValue"
     @update:model-value="emits('update:modelValue', $event)"
     :searchable="search"
-    placeholder="Adresse de la personne"
+    :placeholder="placeholder"
     by="id"
   />
 </template>
 <script setup>
 const emits = defineEmits(["update:modelValue"]);
-const { modelValue } = defineProps({ modelValue: "" });
+const { modelValue } = defineProps({
+  modelValue: "",
+  placeholder: { default: "" },
+});
 const apiUrl = useRuntimeConfig().public.addressBaseUrl;
 const search = async (q) => {
   try {
@@ -18,7 +21,11 @@ const search = async (q) => {
         params: { q },
       })
     ).features
-      .map((e) => e.properties)
+      .map((e) => ({
+        ...e.properties,
+        lat: e.geometry.coordinates[1],
+        long: e.geometry.coordinates[0],
+      }))
       .filter(Boolean);
     return addresses ?? [];
   } catch (err) {
