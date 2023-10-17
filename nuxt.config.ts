@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  nitro: { static: true },
+  nitro: { preset: "node-server" },
   ssr: false,
   modules: ["@nuxt/ui", "nuxt-mapbox"],
   ui: {
