@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     mongodbUri: "mongodb://user:pwd@127.0.1:27017",
     jwtSecret: "mysecretjwtPassword",
     public: {
-      addressBaseUrl: "http://localhost:7878",
+      addressBaseUrl: "http://90.101.48.249:7878",
     },
   },
   css: ["@/assets/theme.scss"],
